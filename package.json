@@ -14,7 +14,7 @@
     },
     "main": "dist/nodes/DealFlow/DealFlow.node.js",
     "scripts": {
-        "build": "tsc && gulp build:icons",
+        "build": "tsc && cp nodes/DealFlow/dealflow.svg dist/nodes/DealFlow/ && cp nodes/DealFlow/DealFlow.node.json dist/nodes/DealFlow/",
         "dev": "tsc --watch",
         "lint": "eslint nodes credentials --ext .ts",
         "prepublishOnly": "npm run build"
@@ -27,7 +27,7 @@
     },
     "devDependencies": {
         "@types/node": "^20.0.0",
-        "gulp": "^4.0.2",
+
         "n8n-workflow": "^1.0.0",
         "typescript": "~5.4.0"
     },
