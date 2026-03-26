@@ -2,7 +2,14 @@
     "name": "n8n-nodes-dealflow",
     "version": "0.1.0",
     "description": "n8n community node for Deal Flow — pipeline and deal management plugin for Mautic",
-    "keywords": ["n8n-community-node-package", "n8n", "mautic", "deal-flow", "pipeline", "crm"],
+    "keywords": [
+        "n8n-community-node-package",
+        "n8n",
+        "mautic",
+        "deal-flow",
+        "pipeline",
+        "crm"
+    ],
     "license": "MIT",
     "author": {
         "name": "Sean Mahoney",
@@ -10,25 +17,34 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/dealflowplugin/n8n-nodes-dealflow"
+        "url": "https://github.com/tncSean/n8n-nodes-dealflow"
     },
     "main": "dist/nodes/DealFlow/DealFlow.node.js",
     "scripts": {
         "build": "tsc && cp nodes/DealFlow/dealflow.svg dist/nodes/DealFlow/ && cp nodes/DealFlow/DealFlow.node.json dist/nodes/DealFlow/",
         "dev": "tsc --watch",
+        "test": "jest",
         "lint": "eslint nodes credentials --ext .ts",
         "prepublishOnly": "npm run build"
     },
-    "files": ["dist"],
+    "files": [
+        "dist"
+    ],
     "n8n": {
         "n8nNodesApiVersion": 1,
-        "credentials": ["dist/credentials/DealFlowApi.credentials.js"],
-        "nodes": ["dist/nodes/DealFlow/DealFlow.node.js"]
+        "credentials": [
+            "dist/credentials/DealFlowApi.credentials.js"
+        ],
+        "nodes": [
+            "dist/nodes/DealFlow/DealFlow.node.js"
+        ]
     },
     "devDependencies": {
+        "@types/jest": "^30.0.0",
         "@types/node": "^20.0.0",
-
+        "jest": "^30.3.0",
         "n8n-workflow": "^1.0.0",
+        "ts-jest": "^29.4.6",
         "typescript": "~5.4.0"
     },
     "peerDependencies": {
