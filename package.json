@@ -1,0 +1,37 @@
+{
+    "name": "n8n-nodes-dealflow",
+    "version": "0.1.0",
+    "description": "n8n community node for Deal Flow — pipeline and deal management plugin for Mautic",
+    "keywords": ["n8n-community-node-package", "n8n", "mautic", "deal-flow", "pipeline", "crm"],
+    "license": "MIT",
+    "author": {
+        "name": "Sean Mahoney",
+        "email": "sean@dealflowplugin.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dealflowplugin/n8n-nodes-dealflow"
+    },
+    "main": "dist/nodes/DealFlow/DealFlow.node.js",
+    "scripts": {
+        "build": "tsc && gulp build:icons",
+        "dev": "tsc --watch",
+        "lint": "eslint nodes credentials --ext .ts",
+        "prepublishOnly": "npm run build"
+    },
+    "files": ["dist"],
+    "n8n": {
+        "n8nNodesApiVersion": 1,
+        "credentials": ["dist/credentials/DealFlowApi.credentials.js"],
+        "nodes": ["dist/nodes/DealFlow/DealFlow.node.js"]
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "gulp": "^4.0.2",
+        "n8n-workflow": "^1.0.0",
+        "typescript": "~5.4.0"
+    },
+    "peerDependencies": {
+        "n8n-workflow": "*"
+    }
+}

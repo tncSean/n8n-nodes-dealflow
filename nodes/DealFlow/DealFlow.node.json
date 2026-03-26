@@ -1,0 +1,11 @@
+{
+	"node": "n8n-nodes-dealflow.dealFlow",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Sales"],
+	"resources": {
+		"primaryDocumentation": [
+			{ "url": "https://dealflowplugin.com/docs/api" }
+		]
+	}
+}
