@@ -45,6 +45,7 @@
         "jest": "^30.3.0",
         "n8n-workflow": "^1.0.0",
         "ts-jest": "^29.4.6",
+        "ts-node": "^10.9.2",
         "typescript": "~5.4.0"
     },
     "peerDependencies": {
