@@ -10,11 +10,17 @@ In your n8n instance, go to **Settings > Community Nodes** and install:
 n8n-nodes-dealflow
 ```
 
-Or install via CLI:
+Or install via CLI (self-hosted n8n, from the n8n user folder):
 
 ```bash
 npm install n8n-nodes-dealflow
 ```
+
+## Compatibility
+
+- Deal Flow plugin 0.9.x
+- Mautic 7.x
+- n8n with community nodes enabled (`n8nNodesApiVersion` 1)
 
 ## Prerequisites
 
@@ -57,6 +63,15 @@ Pipeline and stage fields use dynamic dropdowns that load options from your Maut
 ## API Documentation
 
 Full API documentation is available at [dealflowplugin.com/docs/api](https://dealflowplugin.com/docs/api).
+
+## Known issues (fixed in 0.2.0)
+
+Version 0.1.x has four bugs that return or save the wrong data without raising an error. All four are fixed in 0.2.0. Until then, use the workaround shown.
+
+1. **Get Timeline returns one item instead of one per event.** The whole timeline arrives as a single array in one item, so the next node sees one broken item. Workaround: call `GET /api/dealflow/deals/{id}/timeline` with an HTTP Request node (same Mautic credentials), then add a Split Out node on `timeline`.
+2. **A value of 0 or an empty field is ignored.** Setting Amount, Confidence, or Owner to `0`, or clearing a field, is dropped from the request, and the deal keeps its old value. Workaround: make that change in the Mautic UI.
+3. **Create Note and Create Task return the whole deal.** The new note or task ID is not in the output, so a workflow cannot create a task and then update it. Workaround: none in the node. Update tasks from a workflow that already holds the task ID.
+4. **Get Many Deals returns only the default pipeline and does not page.** With two or more pipelines, deals in the others are missing and no error appears. Return All does not fetch every page. Workaround: set the Pipeline filter explicitly and run the node once per pipeline.
 
 ## License
 
