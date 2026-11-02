@@ -1,6 +1,6 @@
 {
     "name": "n8n-nodes-dealflow",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "n8n community node for Deal Flow — pipeline and deal management plugin for Mautic",
     "keywords": [
         "n8n-community-node-package",
@@ -50,5 +50,9 @@
     },
     "peerDependencies": {
         "n8n-workflow": "*"
+    },
+    "homepage": "https://github.com/tncSean/n8n-nodes-dealflow#readme",
+    "bugs": {
+        "url": "https://github.com/tncSean/n8n-nodes-dealflow/issues"
     }
 }
